@@ -1,6 +1,7 @@
 function ajax_read_article(inputUUID)
 {
 	url = "/get_youtube_recently_post/?inputLimit=1&inputType=selectVideo&inputUUID=" + inputUUID
+	
 	$.ajax({
 		url : url,
 		success:function(data){
