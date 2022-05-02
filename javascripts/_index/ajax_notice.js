@@ -1,8 +1,9 @@
 function ajax_notice(inputUUID, tableName)
 {
 	url = "/get_index_notice/" + inputUUID + "/"
+	
 	$.ajax({
-		url : ,
+		url : url,
 		success:function(data){
 			var t1 = $(tableName).DataTable();
 			

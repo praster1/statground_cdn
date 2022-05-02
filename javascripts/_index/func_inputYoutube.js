@@ -1,6 +1,8 @@
-function func_inputYoutube(channelUUID, title) {
+function func_inputYoutube(channelUUID, inputTitle) {
+	var url = "/get_index_youtube/?uuid=" + channelUUID + "&videoCount=1"
+	
 	$.ajax({
-		url : "/get_index_youtube/?uuid=" + channelUUID + "&videoCount=1",
+		url : url,
 		success:function(data){
 		
 			for(key in data){
@@ -25,7 +27,7 @@ function func_inputYoutube(channelUUID, title) {
 				$("#index_youtube").append(html)
 			}
 			
-			$("#index_youtube_title").append(title)
+			$("#index_youtube_title").append(inputTitle)
 		}
 	})
 }
