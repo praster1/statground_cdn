@@ -1,5 +1,7 @@
 function table_community_famous_timeline(getValue)
 {
+	getValue = getValue.replace("_", "")
+	
 	var tableName = '#table_community_famous_timeline_' + getValue
 	var url = "/get_community_contents_famous_timeline/" + getValue + "/"
 	
