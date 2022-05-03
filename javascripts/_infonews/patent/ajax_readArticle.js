@@ -3,7 +3,7 @@ function ajax_readArticle(requestUUID)
 	url = "/get_read_article_readArticle_patent/?requestUUID=" + requestUUID
 	
 	$.ajax({
-		url : url",
+		url : url,
 		success:function(data){
 			
 			// 버튼
