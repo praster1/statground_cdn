@@ -5,7 +5,7 @@ function ajax_dataInfo(requestUUID, subRequestUUID)
 	$(".trigger_danger_previewTable").hide();
 	$(".trigger_data_generate_link").hide();
 	
-	url : "/get_data_info/?requestUUID=" + requestUUID + "&subRequestUUID=" + subRequestUUID
+	url = "/get_data_info/?requestUUID=" + requestUUID + "&subRequestUUID=" + subRequestUUID
 
 	$.ajax({
 		url : url,
