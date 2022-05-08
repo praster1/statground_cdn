@@ -21,6 +21,7 @@ function drawChart_marketQuantile(inputData, divID, columnName, inputTitle = "ì 
 			focusTarget: 'category',
 			legend: { position: "none" },
 			hAxis: { textStyle: { color: 'green' }, format: 'yy-MM-dd' },
+			colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6']
 			explorer: { actions: ['dragToZoom', 'rightClickToReset'], axis: 'horizontal' }
 		};
 
