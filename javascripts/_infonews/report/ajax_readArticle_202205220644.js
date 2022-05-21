@@ -25,12 +25,9 @@ function ajax_readArticle(requestUUID)
 			
 
 			// 저자
-			author = ""
-			if (!isEmpty(data.Author)) 	{
-				author = data.Author.toString()
-				html = "<p style='font-size:small'>" + author + "</p>"
-				$("#inputAuthor").append(html)
-			}
+			author = data.Author.toString()
+			html = "<p style='font-size:small'>" + author + "</p>"
+			$("#inputAuthor").append(html)
 
 			changeTitle(title + " - " + author)		// 메타 태그: 타이틀 변경
 
