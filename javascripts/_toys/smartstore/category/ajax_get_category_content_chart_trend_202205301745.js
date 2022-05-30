@@ -24,8 +24,9 @@ function ajax_get_category_content_chart_trend(categoryCode)
 			$("#analysisReport_url").append(html)
 			
 			// 키워드 목록 다운로드 버튼
+			
 			$("#keywordListDownload").empty()
-			if (data.chartData.keyword_dataset > 0)
+			if (data.keyword_dataset > 0)
 			{
 				html = '<a href="/data/readDataInfo/NAVER_Shopping/' + categoryCode.toString() +'-keywords/" class="btn" role="button" target="_blank">'
 				html += '<span class="input-group-addon btn-danger btn-xs">'
