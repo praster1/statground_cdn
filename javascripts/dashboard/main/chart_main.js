@@ -39,7 +39,7 @@ function chart_main()
 
 				var formatter = new google.visualization.DateFormat({pattern: 'yyyy-MM-dd'});
 				formatter.format(chartData, 0);
-				var chart = new google.visualization.LineChart(document.getElementById('chart_main'));
+				var chart = new google.visualization.ColumnChart(document.getElementById('chart_main'));
 				chart.draw(chartData, options);
 				
 				$(window).smartresize(function () {

@@ -1,7 +1,5 @@
-function chart_main()
+function chart_main_cntPageviewPerViewer()
 {
-	$("#chart_main").hide()
-
 	$.ajax({
 		url : "/get_main_pageview/",
 		success:function(data){
@@ -11,35 +9,29 @@ function chart_main()
 			function drawChart() {
 				var chartData = new google.visualization.DataTable();
 				chartData.addColumn('date', 'Date');
-				chartData.addColumn('number', 'Page View');
-				chartData.addColumn('number', 'Viewer Count');
+				chartData.addColumn('number', 'Page View per Viewer');
 
 				for(key in data){
 					chartData.addRows([
 						[	new Date(data[key].yearDate), 
-							nullConverter(data[key].cntPageView), 
-							nullConverter(data[key].cntViewer)
+							nullConverter(data[key].cntPageviewPerViewer)
 						]
 					]);
 				}
 
 				var options = {
-					title: '페이지 뷰(왼쪽, 파란색) / 접속자 수(오른쪽, 빨간색)',
-					series: {
-					  0: {targetAxisIndex: 0},
-					  1: {targetAxisIndex: 1}
-					},
+					title: '접속자당 페이지 뷰 평균',
 					width: '100%',
 					legend: { position: 'bottom' },
 					crosshair: {orientation: 'vertical', trigger: 'focus'},
 					focusTarget: 'category',
-					hAxis: { textStyle: { color: 'green' }, format: 'yy-MM' },
+					hAxis: { textStyle: { color: 'green' }, format: 'yy-MM-dd' },
 					explorer: { actions: ['dragToZoom', 'rightClickToReset'], axis: 'horizontal' }
 				};
 
-				var formatter = new google.visualization.DateFormat({pattern: 'yyyy-MM'});
+				var formatter = new google.visualization.DateFormat({pattern: 'yyyy-MM-dd'});
 				formatter.format(chartData, 0);
-				var chart = new google.visualization.LineChart(document.getElementById('chart_main'));
+				var chart = new google.visualization.ColumnChart(document.getElementById('chart_main_cntPageviewPerViewer'));
 				chart.draw(chartData, options);
 				
 				$(window).smartresize(function () {
@@ -47,8 +39,7 @@ function chart_main()
 				});
 			}
 			
-			$("#chart_main").show()
-			$(".trigger_chart_main").hide()
+			$("#chart_main_cntPageviewPerViewer").show()
 		}
 	})
 }
