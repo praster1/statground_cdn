@@ -26,9 +26,7 @@ function printTableDataRecentlyUploaded()
 			{"data": "Dataset"}
 		],
 		"oLanguage": { "sInfo" : "" },
-		"language": { "lengthMenu": "",
-						   "processing": "<img src='https://cdn.jsdelivr.net/gh/praster1/statground_cdn/images/tati/9.png' width='35%'/>"
-						},
+		"language": { "lengthMenu": "" },
 		"drawCallback": function( settings ) {
 			 $("#board_data_recently_uploaded thead").remove();
 		 }
